@@ -1,0 +1,26 @@
+{
+  "228e86c6-46a6-4d98-b64c-17e9e5b96398": {
+    "title": "WarCraft III: The Frozen Throne",
+    "category": "Strategy",
+    "maxLevel": "100",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/8/87/Warcraftiii-frozen-throne-boxcover.jpg",
+    "summary": "Warcraft III: The Frozen Throne is the expansion pack for Warcraft III: Reign of Chaos, a real-time strategy video game by Blizzard Entertainment. It was released worldwide on July 1, 2003, for Microsoft Windows and Mac OS X. The Frozen Throne builds upon the story of Reign of Chaos and depicts the events after the main game's conclusion. The single-player unfolds from the perspective of two new protagonists—the Night Elf warden Maiev Shadowsong and the Blood Elf prince Kael'Thas—as well as returning protagonist Arthas Menethil. Additionally, the expansion contains Act I of a separate Horde campaign that is independent from the main storyline with Blizzard releasing Acts II and III via patch in December 2003, taking in player feedback of Act I when developing these chapters.",
+    "_id": "228e86c6-46a6-4d98-b64c-17e9e5b96398"
+  },
+  "8fb2a181-5acd-47ec-966b-5c08df08c50c": {
+    "title": "World of Warcraft: Wrath of the Lich King",
+    "category": "MMO",
+    "maxLevel": "80",
+    "imageUrl": "https://www.google.com/imgres?q=world%20of%20warcraft%20wotlk&imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2Fb%2Fbe%2FWorld_of_Warcraft_Wrath_of_the_Lich_King.png&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FWorld_of_Warcraft%3A_Wrath_of_the_Lich_King&docid=Jk8oRilWBv0goM&tbnid=9AsRrecrdLl3NM&vet=12ahUKEwjUp-P7uLqHAxXlRvEDHQUkAHUQM3oECBgQAA..i&w=264&h=378&hcb=2&ved=2ahUKEwjUp-P7uLqHAxXlRvEDHQUkAHUQM3oECBgQAA",
+    "summary": "Wrath of the Lich King Classic is the second Classic expansion, following the initial release of Classic World of Warcraft and Burning Crusade Classic. Players will venture off into Northrend, achieve Level 80, and defeat the Lich King in a final epic showdown inside of Icecrown Citadel",
+    "_id": "8fb2a181-5acd-47ec-966b-5c08df08c50c"
+  },
+  "0af4738f-c670-470b-93da-5b20d40352df": {
+    "title": "World of Warcraft",
+    "category": "MMO",
+    "maxLevel": "60",
+    "imageUrl": "https://www.google.com/imgres?q=world%20of%20warcraft%20wotlk&imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fen%2Fb%2Fbe%2FWorld_of_Warcraft_Wrath_of_the_Lich_King.png&imgrefurl=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FWorld_of_Warcraft%3A_Wrath_of_the_Lich_King&docid=Jk8oRilWBv0goM&tbnid=9AsRrecrdLl3NM&vet=12ahUKEwjUp-P7uLqHAxXlRvEDHQUkAHUQM3oECBgQAA..i&w=264&h=378&hcb=2&ved=2ahUKEwjUp-P7uLqHAxXlRvEDHQUkAHUQM3oECBgQAA",
+    "summary": "Wrath of the Lich King Classic is the second Classic expansion, following the initial release of Classic World of Warcraft and Burning Crusade Classic. Players will venture off into Northrend, achieve Level 80, and defeat the Lich King in a final epic showdown inside of Icecrown Citadel",
+    "_id": "0af4738f-c670-470b-93da-5b20d40352df"
+  }
+}
