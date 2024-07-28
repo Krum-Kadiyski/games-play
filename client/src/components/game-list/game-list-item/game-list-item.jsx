@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+// eslint-disable-next-line react/prop-types
 const GameListItem = ({ _id, title, categoty, imageUrl }) => {
   return (
     <>
