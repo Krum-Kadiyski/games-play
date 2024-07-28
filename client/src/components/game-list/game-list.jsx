@@ -1,4 +1,4 @@
-import useGetAllGames from '../../hooks/useGames';
+import { useGetAllGames } from '../../hooks/useGames';
 import GameListItem from './game-list-item/game-list-item';
 
 const GameList = () => {
