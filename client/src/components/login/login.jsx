@@ -2,19 +2,24 @@ import { useNavigate } from 'react-router-dom';
 import { useLogin } from '../../hooks/useAuth';
 import useForm from '../../hooks/useForm';
 
+const initialValues = { email: '', password: '' };
+
 const Login = () => {
   const login = useLogin();
   const navigate = useNavigate();
-  const { values, changeHandler, submitHandler } = useForm(
-    { email: '', password: '' },
-    async ({ email, password }) => {
-      try {
-        await login(email, password);
-        navigate('/');
-      } catch (error) {
-        console.log(error.message);
-      }
+
+  const loginHandler = async ({ email, password }) => {
+    try {
+      await login(email, password);
+      navigate('/');
+    } catch (error) {
+      console.log(error.message);
     }
+  };
+
+  const { values, changeHandler, submitHandler } = useForm(
+    initialValues,
+    loginHandler
   );
   return (
     <>
