@@ -1,7 +1,9 @@
+import { getAccessToken } from '../utils/authUtils';
+
 const requester = async (method, url, data) => {
   const options = {};
 
-  const accessToken = localStorage.getItem('accessToken');
+  const accessToken = getAccessToken();
 
   if (accessToken) {
     options.headers = {
