@@ -8,6 +8,7 @@ export const AuthContext = createContext({
   isAutenticated: false,
   // eslint-disable-next-line no-unused-vars
   changeAuthState: (authState = {}) => null,
+  logout: () => null,
 });
 
 export const AuthContextProvider = (props) => {
@@ -18,12 +19,17 @@ export const AuthContextProvider = (props) => {
     setAuthState(state);
   };
 
+  const logout = () => {
+    setAuthState(null);
+  };
+
   const contextData = {
-    userId: authState._id,
-    email: authState.email,
-    accessToken: authState.accessToken,
-    isAuthenticated: !!authState.email,
+    userId: authState?._id,
+    email: authState?.email,
+    accessToken: authState?.accessToken,
+    isAuthenticated: !!authState?.email,
     changeAuthState,
+    logout,
   };
 
   return (
