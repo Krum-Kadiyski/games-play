@@ -5,8 +5,7 @@ export const AuthContext = createContext({
   userId: '',
   email: '',
   accessToken: '',
-  isAutenticated: false,
-  // eslint-disable-next-line no-unused-vars
+  isAuthenticated: false,
   changeAuthState: (authState = {}) => null,
   logout: () => null,
 });

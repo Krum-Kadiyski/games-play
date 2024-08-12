@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom';
 import { useAuthContext } from '../../contexts/auth-context';
+import withAuth from '../../HOC/withAuth';
 
-const Header = () => {
-  const { isAuthenticated } = useAuthContext();
+const Header = ({ auth }) => {
+  // const { isAuthenticated } = useAuthContext();
+
+  const { isAuthenticated } = auth;
+
   return (
     <>
       <header>
@@ -29,4 +33,9 @@ const Header = () => {
     </>
   );
 };
-export default Header;
+
+const EnhancedHeader = withAuth(Header);
+
+export default EnhancedHeader;
+
+// export default Header;
