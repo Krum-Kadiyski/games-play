@@ -10,8 +10,9 @@ const initialValues = {
 
 const GameDetails = () => {
   const { gameId } = useParams();
-  const [comments, setComments] = useGetAllComments(gameId);
+  const [comments, dispatch] = useGetAllComments(gameId);
   const createComment = useCreateComment();
+  const { email } = useAuthContext();
   const [game] = useGetOneGames(gameId);
   const { isAuthenticated } = useAuthContext();
   const { changeHandler, submitHandler, values } = useForm(
@@ -20,7 +21,11 @@ const GameDetails = () => {
       try {
         const newComment = await createComment(gameId, comment);
 
-        setComments((prevComments) => [...prevComments, newComment]);
+        // setComment((prevComments) => [...prevComments, newComment]);
+        dispatch({
+          type: 'ADD_COMMENT',
+          payload: { ...newComment, author: { email } },
+        });
       } catch (error) {
         console.log();
       }
@@ -46,7 +51,9 @@ const GameDetails = () => {
             <ul>
               {comments.map((comment) => (
                 <li key={comment._id} className="comment">
-                  <p>{comment.author.email}: {comment.text}</p>
+                  <p>
+                    {comment.author.email}: {comment.text}
+                  </p>
                 </li>
               ))}
             </ul>
