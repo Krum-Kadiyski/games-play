@@ -14,6 +14,8 @@ const useForm = (initalValues, submitCallback) => {
     event.preventDefault();
 
     submitCallback(values);
+    
+    setValues(initalValues);
   };
 
   return {

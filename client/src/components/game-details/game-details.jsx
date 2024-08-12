@@ -16,8 +16,14 @@ const GameDetails = () => {
   const { isAuthenticated } = useAuthContext();
   const { changeHandler, submitHandler, values } = useForm(
     initialValues,
-    ({ comment }) => {
-      createComment(gameId, comment);
+    async ({ comment }) => {
+      try {
+        const newComment = await createComment(gameId, comment);
+
+        setComments((prevComments) => [...prevComments, newComment]);
+      } catch (error) {
+        console.log();
+      }
     }
   );
 
