@@ -6,9 +6,9 @@ const Home = () => {
   const [latestGames, setLatestGames] = useState([]);
   useEffect(() => {
     (async () => {
-      //TODO: modify to fetch latest
-      const result = await gamesAPI.getAll();
-      setLatestGames(result.reverse().slice(0, 3));
+      const result = await gamesAPI.getLatest();
+
+      setLatestGames(result)
     })();
   }, []);
   return (

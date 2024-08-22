@@ -1,7 +1,11 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const useForm = (initalValues, submitCallback) => {
   const [values, setValues] = useState(initalValues);
+
+  useEffect(() => {
+    setValues(initalValues);
+  }, [initalValues]);
 
   const changeHandler = (event) => {
     setValues((prevState) => ({
@@ -10,11 +14,11 @@ const useForm = (initalValues, submitCallback) => {
     }));
   };
 
-  const submitHandler = (event) => {
+  const submitHandler = async (event) => {
     event.preventDefault();
 
-    submitCallback(values);
-    
+    await submitCallback(values);
+
     setValues(initalValues);
   };
 

@@ -18,7 +18,13 @@ export const useGetAllGames = () => {
 };
 
 export const useGetOneGames = (gameId) => {
-  const [game, setGame] = useState({});
+  const [game, setGame] = useState({
+    title: '',
+    category: '',
+    maxLevel: '',
+    imageUrl: '',
+    summary: '',
+  });
 
   useEffect(() => {
     const response = async () => {
@@ -37,8 +43,3 @@ export const useCreateGame = () => {
 
   return gameCreateHandler;
 };
-
-// export default {
-//   useGetAllGames,
-//   useGetOneGames,
-// };

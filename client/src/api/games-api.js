@@ -9,14 +9,35 @@ export const getAll = async () => {
   return games;
 };
 
-export const getOne = async (gameId) => request.get(`${BASE_URL}/${gameId}`);
+export const getLatest = async () => {
+  const urlSearchParams = new URLSearchParams({
+    sortBy: `_createdOn desc`,
+    pageSize: 3,
+  });
 
-export const create = async (gameData) => request.post(`${BASE_URL}`, gameData);
+  const result = await request.get(`${BASE_URL}?${urlSearchParams.toString()}`);
+
+  const latestGames = Object.values(result);
+
+  return latestGames;
+};
+
+export const getOne = (gameId) => request.get(`${BASE_URL}/${gameId}`);
+
+export const create = (gameData) => request.post(`${BASE_URL}`, gameData);
+
+export const remove = (gameId) => request.del(`${BASE_URL}/${gameId}`);
+
+export const update = (gameId, gameData) =>
+  request.put(`${BASE_URL}/${gameId}`, gameData);
 
 const gamesApi = {
   getAll,
   getOne,
   create,
+  remove,
+  update,
+  getLatest,
 };
 
 export default gamesApi;

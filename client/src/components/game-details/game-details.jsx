@@ -1,18 +1,20 @@
-import { useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useGetOneGames } from '../../hooks/useGames';
 import useForm from '../../hooks/useForm';
 import { useAuthContext } from '../../contexts/auth-context';
 import { useGetAllComments, useCreateComment } from '../../hooks/useComment';
+import gamesApi from '../../api/games-api';
 
 const initialValues = {
   comment: '',
 };
 
 const GameDetails = () => {
+  const navigate = useNavigate();
   const { gameId } = useParams();
   const [comments, dispatch] = useGetAllComments(gameId);
   const createComment = useCreateComment();
-  const { email } = useAuthContext();
+  const { email, userId } = useAuthContext();
   const [game] = useGetOneGames(gameId);
   const { isAuthenticated } = useAuthContext();
   const { changeHandler, submitHandler, values } = useForm(
@@ -31,6 +33,26 @@ const GameDetails = () => {
       }
     }
   );
+
+  const gameDeleteHandler = async () => {
+    const isConfimed = confirm(
+      `Are you sure you want to delete ${game.title} game? `
+    );
+
+    if (!isConfimed) {
+      return;
+    }
+
+    try {
+      await gamesApi.remove(gameId);
+
+      navigate('/');
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  const isOwhner = userId === game._ownerId;
 
   return (
     <>
@@ -63,14 +85,17 @@ const GameDetails = () => {
           </div>
 
           {/* <!-- Edit/Delete buttons ( Only for creator of this game )  --> */}
-          <div className="buttons">
-            <a href="#" className="button">
-              Edit
-            </a>
-            <a href="#" className="button">
-              Delete
-            </a>
-          </div>
+
+          {isOwhner && (
+            <div className="buttons">
+              <Link to={`/games/${gameId}/edit`} className="button">
+                Edit
+              </Link>
+              <a href="#" onClick={gameDeleteHandler} className="button">
+                Delete
+              </a>
+            </div>
+          )}
         </div>
 
         {/* <!-- Bonus --> */}
